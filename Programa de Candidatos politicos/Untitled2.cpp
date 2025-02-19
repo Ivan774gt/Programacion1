@@ -10,9 +10,11 @@ void imprimirLinea();
 
 int main() {
     srand(time(0));
+    char opcion;
+    do {
     int numCandidatos;
 
-    cout << "Ingrese el número de candidatos: ";
+    cout << "Ingrese el numero de candidatos: ";
     cin >> numCandidatos;
 
     string candidatos[numCandidatos];
@@ -61,11 +63,15 @@ int main() {
             minVotos = totalVotos[i];
             perdedor = i;
         }
+
     }
 
     cout << "\nEl candidato ganador es: " << candidatos[ganador] << " con " << maxVotos << " votos." << endl;
     cout << "El candidato con menos votos es: " << candidatos[perdedor] << " con " << minVotos << " votos." << endl;
 
+    cout << "¿Desea realizar otra elección? (S/N): ";
+        cin >> opcion;
+} while (opcion == 'S' || opcion == 's');
     return 0;
 }
 
